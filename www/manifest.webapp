@@ -1,0 +1,32 @@
+{
+    "version": "0.1",
+    "name": "PirateFox",
+    "description": "Easy sharing of media from device to PirateBox.",
+    "launch_path": "/index.html",
+    "icons": {
+        "60": "/style/icons/piratefox.png",
+        "128": "/style/icons/piratefox-128.png"
+    },
+    "developer": {
+        "name": "Peter Rukavina",
+        "url": "http://ruk.ca/app/piratefox"
+    },
+    "activities": {
+      "share": {
+        "filters": {
+          "type": "image/*"
+         },
+        "href": "/index.html",
+        "returnValue": true,
+        "disposition": "window"
+      }
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "type": "privileged",
+    "permissions": {
+			"systemXHR": { "description":"Used to send data to PirateBox." },
+			"audio-channel-content": { "description":"Access to your music and video for upload" },
+			"audio-channel-normal": {}
+    }
+}

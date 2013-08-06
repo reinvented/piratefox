@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>PirateFox</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Uploads files to a connected PirateBox.">
+		<meta name="author" content="Peter Rukavina">
+		<link href="style/headers.css" rel="stylesheet"><!-- From Gaia CSS, styling for headers. -->
+		<link href="style/lists.css" rel="stylesheet"><!-- From Gaia CSS, styling for lists. -->
+		<link href="style/buttons.css" rel="stylesheet"><!-- From Gaia CSS, styling for buttons. -->
+		<link href="style/confirm.css" rel="stylesheet"><!-- From Gaia CSS, styling for confirmation dialog. -->
+		<link href="style/status.css" rel="stylesheet"><!-- From Gaia CSS, styling for status messages. -->
+		<link href="style/cross_browser.css" rel="stylesheet"><!-- From Gaia CSS, enhances cross-browser compatibility. -->
+		<link href="style/util.css" rel="stylesheet"><!-- From Gaia CSS, various and sundry styles. -->
+		<link href="style/progress_activity.css" rel="stylesheet"><!-- From Gaia CSS, enables progress bar for file upload. -->
+		<link href="style/responsive.css" rel="stylesheet"><!-- A hack that allows sizing on Geeksphone Peak to work properly. -->
+		<link href="style/piratefox.css" rel="stylesheet"><!-- This is the local CSS, where we do local mucking about. -->
+	</head>
+	<body role="application">
+
+		<!-- Each "page" of the app is a "section". This one is the app's main page, which shows Cell ID information. -->	
+		<section role="region" id="list-view">
+			<header>
+				<h1>PirateFox</h1>
+			</header>
+			<div id="main">
+        <button id="selectfile" disabled>Select a File</button>
+			</div>
+      <div id="mainlist" data-type="list">
+				<ul id="uploadedfiles">
+				</ul>
+			</div>
+	    <section role="status" id="statusmessage">
+		    <p id="statusmessagetext"></p>
+	    </section>
+		</section>
+
+    <form role="dialog" data-type="confirm" id="notfound-view" class="move-down">
+      <section>
+        <h1>No PirateBox Found</h1>
+        <p>
+          This app uploads to a PirateBox on 192.168.1.1. Your device's wifi must
+          be connected to the PirateBox's SSID.</small>
+        </p>
+        <p>Do you want to look again?</p>
+      </section>
+      <menu>
+        <button>Cancel</button>
+        <button class="recommend" id="lookagain">Yes</button>
+      </menu>
+    </form>
+
+		<script src="js/zepto.min.js"></script><!-- A lightweight jQuery replacement. From http://zeptojs.com/ -->
+		<script src="js/piratefox.js"></script><!-- Local JavaScript. The guts of the app are in here. -->
+	</body>
+</html>
